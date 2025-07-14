@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PetShop - Artículos para Mascotas</title>
+  <!-- Íconos de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f8ff;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to right, #00bfa5, #00796b);
+      color: white;
+      padding: 30px 10%;
+      text-align: center;
+      animation: fadeInDown 1s ease;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    nav {
+      background-color: #004d40;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 15px;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s;
+    }
+    nav button:hover {
+      color: #ffd600;
+    }
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      animation: fadeInUp 1s ease;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2em;
+      color: #00796b;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .producto {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+    .producto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .producto h3 {
+      font-size: 1.2em;
+      margin: 15px;
+      color: #00796b;
+    }
+    .producto p {
+      font-size: 0.95em;
+      margin: 0 15px 15px;
+      color: #666;
+    }
+    .producto button {
+      margin: 0 15px 20px;
+      background-color: #00bfa5;
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .producto button:hover {
+      background-color: #00796b;
+    }
+    footer {
+      background-color: #004d40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 0.9em;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    i {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-paw"></i> PetShop</h1>
+    <p>Todo lo que tu mascota necesita, en un solo lugar</p>
+  </header>
+  <nav>
+    <button onclick="buscarGoogle('Inicio mascotas')"><i class="fas fa-home"></i> Inicio</button>
+    <button onclick="buscarGoogle('Artículos para perros')"><i class="fas fa-dog"></i> Perros</button>
+    <button onclick="buscarGoogle('Artículos para gatos')"><i class="fas fa-cat"></i> Gatos</button>
+    <button onclick="buscarGoogle('Accesorios para mascotas')"><i class="fas fa-bone"></i> Accesorios</button>
+    <button onclick="buscarGoogle('Contacto tienda de mascotas')"><i class="fas fa-envelope"></i> Contacto</button>
+  </nav>
+  <main>
+    <h2><i class="fas fa-star"></i> Productos Destacados</h2>
+    <section class="productos">
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=400&q=80" alt="Collar para perro" />
+        <h3>Collar Ajustable para Perro</h3>
+        <p>Resistente, cómodo y disponible en varios colores y tamaños.</p>
+        <button onclick="buscarGoogle('Collar ajustable para perro')">Comprar</button>
+      </article>
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=400&q=80" alt="Rascador para gatos" />
+        <h3>Rascador para Gatos</h3>
+        <p>Ideal para cuidar sus uñas y evitar daños en muebles.</p>
+        <button onclick="buscarGoogle('Rascador para gatos')">Comprar</button>
+      </article>
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="Juguete para perros" />
+        <h3>Juguete Interactivo para Perros</h3>
+        <p>Perfecto para mantener a tu mascota activa y entretenida.</p>
+        <button onclick="buscarGoogle('Juguete interactivo para perros')">Comprar</button>
+      </article>
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=400&q=80" alt="Cama para gatos" />
+        <h3>Cama Cómoda para Gatos</h3>
+        <p>Un refugio suave y cálido para el descanso de tu felino.</p>
+        <button onclick="buscarGoogle('Cama cómoda para gatos')">Comprar</button>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 PetShop. Todos los derechos reservados. <i class="fas fa-heart"></i></p>
+  </footer>
+  <script>
+    function buscarGoogle(query) {
+      const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
